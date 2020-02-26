@@ -21,6 +21,7 @@ def threaded(c):
             break
 
         # send back string to all client 
+        print("Received data " + str(data))
         print("Broadcasting to all clients, which are: " + str(len(CONNECTION_LIST)))
         for conn in CONNECTION_LIST:
             conn.send(data)
