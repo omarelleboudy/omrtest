@@ -5,7 +5,7 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 # Bind the socket to the port
 server_address = ('0.0.0.0', 4467)
-print('starting server on ' + server_address)
+print('starting server on ' + str(server_address))
 sock.bind(server_address)
 
 while True:
