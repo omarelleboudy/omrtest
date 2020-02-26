@@ -18,7 +18,7 @@ while True:
     buf = connection.recv(1024)  
     print ("Got message: " + str(buf))
     
-    print("Looping over " + len(CONNECTION_LIST) + " connected clients..")
+    print("Looping over " + str(len(CONNECTION_LIST)) + " connected clients..")
 
     for con in CONNECTION_LIST:
         con.send(buf)
