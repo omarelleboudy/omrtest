@@ -24,6 +24,7 @@ def threaded(c):
         print("Received data " + str(data))
         print("Broadcasting to all clients, which are: " + str(len(CONNECTION_LIST)))
         for conn in CONNECTION_LIST:
+            print("Looping over " + str(conn.getsockname()))
             conn.send(data)
   
     # connection closed 
