@@ -8,11 +8,15 @@ sockTCP.bind(('0.0.0.0', 4466))
 
 sockTCP.listen(5)  
 
+CONNECTION_LIST = []
 
 while True:  
     print("Waiting for TCP Message...")
     connection,address = sockTCP.accept()  
+    print("Client " + str(connection) + " connected.")
+    CONNECTION_LIST.append(connection)
     buf = connection.recv(1024)  
     print ("Got message: " + str(buf))
-    connection.broadcast(buf)
-    #connection.close()
+    
+    for con in CONNECTION_LIST:
+        con.send(buf)
