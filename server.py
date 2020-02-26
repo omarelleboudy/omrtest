@@ -2,13 +2,6 @@ import socket,os
 # import thread module 
 from _thread import *
 import threading 
-# Create a TCP/IP socket
-sockTCP = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  
-
-# Bind the socket to the port
-sockTCP.bind(('0.0.0.0', 4466))  
-
-sockTCP.listen(5)  
 
 CONNECTION_LIST = []
 
