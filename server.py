@@ -1,6 +1,6 @@
 import socket,os
 # import thread module 
-from thread import *
+from _thread import *
 import threading 
 # Create a TCP/IP socket
 sockTCP = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  
