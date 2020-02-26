@@ -13,6 +13,6 @@ while True:
     print("Waiting for TCP Message...")
     connection,address = sockTCP.accept()  
     buf = connection.recv(1024)  
-    print ("Got message: " + buf)
+    print ("Got message: " + str(buf))
     connection.broadcast(buf)
     #connection.close()
