@@ -4,8 +4,6 @@ from _thread import *
 import threading 
 
 CONNECTION_LIST = []
-
-print_lock = threading.Lock() 
   
 # thread function 
 def threaded(c): 
@@ -16,8 +14,6 @@ def threaded(c):
         if not data: 
             print('Bye') 
               
-            # lock released on exit 
-            print_lock.release() 
             break
 
         # send back string to all client 
@@ -54,9 +50,7 @@ def Main():
         print("Client connected with address " + str(addr))
 
         CONNECTION_LIST.append(c)
-  
-        # lock acquired by client 
-        print_lock.acquire() 
+
         print('Connected to :', addr[0], ':', addr[1]) 
   
         # Start a new thread and return its identifier 
