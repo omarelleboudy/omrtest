@@ -13,10 +13,12 @@ CONNECTION_LIST = []
 while True:  
     print("Waiting for TCP Message...")
     connection,address = sockTCP.accept()  
-    print("Client " + str(connection) + " connected.")
+    print("Client " + str(address) + " connected.")
     CONNECTION_LIST.append(connection)
     buf = connection.recv(1024)  
     print ("Got message: " + str(buf))
     
+    print("Looping over " + len(CONNECTION_LIST) + " connected clients..")
+
     for con in CONNECTION_LIST:
         con.send(buf)
